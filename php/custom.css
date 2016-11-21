@@ -1,0 +1,36 @@
+body {
+	margin: 0 auto;
+}
+#motherdiv {
+	width: 1080px;
+	margin: 0 auto;
+}
+#header {
+	height: 200px;
+	text-align: center;
+}
+#header h1 {
+	font-size: 2em;
+	font-weight: bolder;
+	padding-top: 50px;
+	padding-bottom: 50px;
+}
+#side-menu {
+	float: left;
+	width: 25%;
+}
+#main-content {
+	float: right;
+	width: 75%;
+}
+.important {
+	color: red;
+	font-weight: bold;
+}
+.code-block {
+	text-align: left;
+	padding: 10px;
+	background-color: lightgray;
+	border-radius: 5px;
+	box-shadow: 2px 2px 5px #888888;
+}
