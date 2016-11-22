@@ -32,7 +32,7 @@ body {
 #side-menu ul li {
 	background-image: url(bullet_tri.png);
 	background-repeat: no-repeat;
-	line-height: 30px;
+	line-height: 35px;
 	padding-left: 30px;
 }
 #main-content {
