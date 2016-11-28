@@ -207,11 +207,10 @@ require_once('db_connect.php');
                 <div class="code-block">
                 <pre>
     /* activate reporting */
-    $driver = new mysqli_driver();
-    $driver->report_mode = MYSQLI_REPORT_ALL;
+    mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
+    $mysqli->autocommit(false);
 
     try {
-        $mysqli->autocommit(false);
         $res1 = $mysqli->query($sql1);
         $res2 = $mysqli->query($sql2);
         $res3 = $mysqli->query($sql3);
@@ -222,8 +221,10 @@ require_once('db_connect.php');
     }
     /* switch back autocommit status */
     $mysqli->autocommit(TRUE);
+    mysqli_report(MYSQLI_REPORT_OFF);
                 </pre>
                 </div>
+                <p><span class="code_highlight">mysqli_report()</span>: Be very careful using this function - it's a per-process setting. If your server is set up to reuse a single PHP process for multiple requests, that means the last setting of this function in any script will affect all other scripts using mysqli. To be safe always call "mysqli_report(MYSQLI_REPORT_OFF)" at the end of a script.</p>
                 <hr>
             </section>            
 
