@@ -25,6 +25,7 @@ if (!$depts) {
     <div id="motherdiv">
         <div id="header">
             <h1>The Original PHP MySQL extension</h1>
+            <a href="index.php">Table of Contents</a> | <a href="mysqli.php">Next</a>
             <hr>
         </div>
 
@@ -107,6 +108,7 @@ if (!$depts) {
     //Use mysql_insert_id() to retrieve the ID generated for an AUTO_INCREMENT column by the previous query (usually INSERT).
                 </pre>
                 </div>
+                <p><span class="code_highlight">mysql_query()</span> returns a resource on success, or FALSE on error</p>
                 <p>For <span class="code_highlight">mysql_fetch_array()</span>, it has an optional second parameter: By using MYSQL_BOTH (default), you'll get an array with both associative and number indices.</p>
                 <hr>
             </section>

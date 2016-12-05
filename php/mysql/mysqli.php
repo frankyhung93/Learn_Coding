@@ -20,6 +20,7 @@ require_once('db_connect.php');
     <div id="motherdiv">
         <div id="header">
             <h1>The Improved PHP MySQL extension</h1>
+            <a href="mysql.php">Previous</a> | <a href="index.php">Table of Contents</a>
             <hr>
         </div>
 

@@ -60,3 +60,22 @@ body {
     position: sticky;
     top: 0;
 }
+.simple-table {
+	width: 85%;
+	border: 0;
+}
+.simple-table th {
+	background: green;
+	border-top: 2px solid black;
+	border-bottom: 2px solid black;
+	text-align: left;
+}
+.simple-table tr:nth-child(even) {
+	background: lightgray;
+}
+.simple-table tr:nth-child(odd) {
+	background: white;
+}
+.simple-table td {
+	padding-left: 5px;
+}
