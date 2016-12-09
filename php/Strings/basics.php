@@ -15,8 +15,8 @@
         <![endif]-->
     <div id="motherdiv">
         <div id="header">
-            <h1>String Functions (Basics)</h1>
-            <a href="index.php">Table of Contents</a> | <a href="advanced.php">Next</a>
+            <h1>String Fundamentals</h1>
+            <a href="index.php">Table of Contents</a> | <a href="functions.php">Next</a>
             <hr>
         </div>
 
