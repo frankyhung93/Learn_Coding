@@ -1,7 +1,3 @@
-<?php
-$raw = get_defined_functions();
-$defined_functions_array = $raw["internal"];
-?>
 <!doctype html>
 <html class="no-js" lang="">
     <head>
@@ -28,7 +24,12 @@ $defined_functions_array = $raw["internal"];
         </div>
 
         <div id="main-container">
-
+            <div id="suggest_functions_div">
+                <div id="suggestions_inner_div" style="margin: 5px;border: 2px solid gray;height: 100%;"></div>
+            </div>
+            <div id="code_result_div">
+                <div id="result_inner_div" style="margin: 5px;border: 2px solid gray;height: 100%;padding: 15px;"></div>
+            </div>
         </div>
     </div>
         <?php include "foot_script.php"; ?>
@@ -38,14 +39,25 @@ $defined_functions_array = $raw["internal"];
     $(function() {
         $("#run_button").click(function() {
             var code_content = $("#code_placeholder").val();
+            // send code for server to eval php code and send back result
             $.get(
                 "eval_code.php",
                 {code: code_content},
                 function(data) {
-                    $("#main-container").html(data);
+                    $("#result_inner_div").html(data);
                 },
                 "text"
-                )
+                );
+
+            // send code to server and return suggested functions for manual-browsing
+            $.get(
+                "load_suggest_functions.php",
+                {code: code_content},
+                function(data) {
+                    $("#suggestions_inner_div").html(data);
+                },
+                "html"
+                );
         });
     });
 </script>
